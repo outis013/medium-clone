@@ -4,7 +4,7 @@ import headerImage from "../assets/medium-logo.png";
 
 const Header = () => {
   return (
-    <div className="header bg-yellow-500 p-2">
+    <div className="header bg-yellow-500 p-2 sticky top-0">
       <div className="header-content w-[75%] m-auto flex justify-between items-center">
         <div className="logo ">
           <h1>
