@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:ital,wght@1,500&family=Roboto:ital,wght@0,400;1,300&family=Young+Serif&display=swap');
-/*Utilities*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins&family=Roboto&family=Young+Serif&display=swap');/*Utilities*/
 
 body {
   width: 100%;
   height: 100%;
-  font-family: 'Young Serif', serif;
+  font-family: 'Poppins', serif;
 }
 
 /* .container {
