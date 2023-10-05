@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import landingImage from "../assets/landing.jpg";
 import { PiStarFourBold, PiTrendUp } from "react-icons/pi";
@@ -64,18 +64,20 @@ const Hero = () => {
       <div className="hero w-[100%]">
         <div className="hero-container w-[100%]">
           <div className="hero-welcome border-b-[1px] border-solid border-black bg-yellow-500 w-[100%] h-[55vh]">
-            <div className="hero-welcome_content w-[87%] h-[100%] ml-auto flex jusify-between">
+            <div className="hero-welcome_content w-full md:w-[87%] h-[100%] mx-4 md:ml-auto flex jusify-between">
               <div className="hero-welcome_text  flex-1 flex flex-col">
-                <h1 className="text-[5rem] mt-[4rem]">Stay Curious.</h1>
-                <p className="mt-8 w-[500px] text-[1.5rem] font-thin">
+                <h1 className="lg:text-[5rem] text-[3rem] mt-[3rem] lg:mt-[2rem]">
+                  Stay Curious.
+                </h1>
+                <p className="lg:mt-6 mt-8 w-[500px] text-[1.5rem] font-thin">
                   Discover stories, thinking and expertise from writers on any
                   topic
                 </p>
-                <p className="mt-8 px-12 text-white bg-black w-fit py-2 rounded-[25px] opacity-80 hover:opacity-100">
+                <p className="lg:mt-6 mt-8 px-12 text-white bg-black w-fit py-2 rounded-[25px] opacity-80 hover:opacity-100">
                   <Link to="getstarted">Start reading</Link>
                 </p>
               </div>
-              <div className="hero-welcome_image flex-1">
+              <div className="hero-welcome_image hidden lg:block flex-1">
                 <div className="landing w-[100%] h-[100%] ">
                   <div className="landing-content w-[80%] h-[95%] flex mt-2">
                     <img
@@ -88,9 +90,9 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="trending my-8 w-[100%] mx-auto border-b-[1px] border-black  border-solid border-opacity-10">
-            <div className="trending-content w-[75%] m-auto">
-              <h2 className="tranding-content-heading flex justify-start items-center gap-2">
+          <div className="trending my-8 w-[100%] lg:mx-auto border-b-[1px] border-black  border-solid border-opacity-10">
+            <div className="trending-content w-[90%] ml-4 lg:w-[75%] lg:m-auto">
+              <h2 className="tranding-content-heading flex justify-start items-center gap-2 border-b-2 border-black border-opacity-20 lg:border-none">
                 <p className="border border-black rounded-[50%] m-[2px] p-[2px]">
                   <PiTrendUp />
                 </p>
@@ -151,8 +153,8 @@ const Hero = () => {
             </div>
           </div>
           <div className="posts w-full">
-            <div className="posts-content w-[75%]  m-auto flex justify-between items-start">
-              <div className="w-[60%]">
+            <div className="posts-content w-full lg:w-[75%]  m-auto flex flex-col-reverse lg:flex-row justify-between items-start">
+              <div className="w-[85%] m-auto md:w-[60%]">
                 {mainPosts &&
                   mainPosts.map((post, index) => (
                     <Link key={index} to={`posts/${post.id}/postdetails`}>
@@ -160,7 +162,7 @@ const Hero = () => {
                     </Link>
                   ))}
               </div>
-              <div className=" w-[400px] sticky top-[80px]">
+              <div className=" w-[400px] mx-auto lg:sticky top-[80px]">
                 <h6 className="font-extrabold mb-3">
                   discover more of what matters to you
                 </h6>

@@ -4,7 +4,7 @@ import { PiStarFourBold } from "react-icons/pi";
 
 const Post = ({ post, monthNames }) => {
   return (
-    <div className="my-[1rem] flex items-center justify-between gap-4">
+    <div className="my-[2rem] flex items-center justify-between gap-4">
       <div>
         <div className="post-author flex gap-2 items-center mb-2">
           <h2 className="post-author_image">
