@@ -69,7 +69,7 @@ const Hero = () => {
                 <h1 className="lg:text-[5rem] text-[3rem] mt-[3rem] lg:mt-[2rem]">
                   Stay Curious.
                 </h1>
-                <p className="lg:mt-6 mt-8 w-[500px] text-[1.5rem] font-thin">
+                <p className="lg:mt-6 mt-8 w-fit  max-w-[500px] text-[1.5rem] font-thin">
                   Discover stories, thinking and expertise from writers on any
                   topic
                 </p>
@@ -162,7 +162,7 @@ const Hero = () => {
                     </Link>
                   ))}
               </div>
-              <div className=" w-[400px] mx-auto lg:sticky top-[80px]">
+              <div className=" w-[90%] lg:[400px] mx-auto lg:sticky top-[80px]">
                 <h6 className="font-extrabold mb-3">
                   discover more of what matters to you
                 </h6>

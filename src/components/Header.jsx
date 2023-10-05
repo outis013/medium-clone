@@ -10,10 +10,8 @@ const Header = () => {
   const toggleNavbarColor = () => {
     if (window.scrollY >= 420) {
       setNavbarColor(true);
-      console.log("changed to white");
     } else {
       setNavbarColor(false);
-      console.log("changed to yellow");
     }
   };
 
