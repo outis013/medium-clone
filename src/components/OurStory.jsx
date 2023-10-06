@@ -31,9 +31,9 @@ const OurStory = () => {
           </nav>
         )}
       </header>
-      <div className="flex gap-4 justify-between items-center w-[95%] m-auto ">
-        <div className="flex-1 text-white w-[50%] mr-4">
-          <h1 className="text-[5rem] my-[4.5rem] w-[600px]">
+      <div className=" lg:flex block gap-4 justify-between items-center w-[95%] m-auto ">
+        <div className="flex-1 text-white w-full lg:w-[50%] mr-4">
+          <h1 className=" text-[3rem] lg:text-[5rem] my-[4.5rem] w-full lg:w-[600px]">
             Everyone has a story to tell.
           </h1>
 
