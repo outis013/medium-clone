@@ -4,6 +4,7 @@ import landingImage from "../assets/landing.jpg";
 import { PiStarFourBold, PiTrendUp } from "react-icons/pi";
 import { mainPosts, posts } from "../assets/data";
 import Post from "./Post";
+import Header from "./Header";
 
 const Hero = () => {
   const monthNames = [
@@ -61,6 +62,7 @@ const Hero = () => {
 
   return (
     <>
+      <Header />
       <div className="hero w-[100%]">
         <div className="hero-container w-[100%]">
           <div className="hero-welcome border-b-[1px] border-solid border-black bg-yellow-500 w-[100%] h-[55vh]">
@@ -153,21 +155,25 @@ const Hero = () => {
             </div>
           </div>
           <div className="posts w-full">
-            <div className="posts-content w-full lg:w-[75%]  m-auto flex flex-col-reverse lg:flex-row justify-between items-start">
-              <div className="w-[85%] m-auto md:w-[60%]">
+            <div className="posts-content w-full lg:w-[75%] gap-3 m-auto flex flex-col-reverse lg:flex-row justify-between items-start">
+              <div className="w-[90%] m-auto md:w-[60%]">
                 {mainPosts &&
                   mainPosts.map((post, index) => (
-                    <Link key={index} to={`posts/${post.id}/postdetails`}>
+                    <Link
+                      key={index}
+                      to={`posts/${post.id}/postdetails`}
+                      className="w-full"
+                    >
                       <Post post={post} monthNames={monthNames} />
                     </Link>
                   ))}
               </div>
-              <div className=" w-[90%] lg:[400px] mx-auto lg:sticky top-[80px]">
+              <div className="  w-[350px] mx-auto lg:sticky top-[80px] ">
                 <h6 className="font-extrabold mb-3">
                   discover more of what matters to you
                 </h6>
 
-                <div className="categories mr-4 flex flex-wrap items-center">
+                <div className="categories flex flex-wrap items-center">
                   {categories &&
                     categories.map((category, index) => (
                       <p

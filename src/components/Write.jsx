@@ -6,4 +6,4 @@ const Write = () => {
   )
 }
 
-export default Write;
+export default Write
