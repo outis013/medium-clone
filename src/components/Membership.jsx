@@ -32,7 +32,7 @@ const Membership = () => {
         className={
           navColor
             ? " sticky w-full top-0 m-auto  border-b-[1px] border-white border-solid bg-white bg-opacity-70 transition-all ease-in-out duration-300 z-10"
-            : '" sticky w-full top-0 m-auto  border-b-[1px] border-white border-solid bg-blue-500 bg-opacity-70 transition-all ease-in-out duration-300 z-10 "'
+            : " sticky w-full top-0 m-auto  border-b-[1px] border-white border-solid bg-blue-500 bg-opacity-70 transition-all ease-in-out duration-300 z-10 "
         }
       >
         <div
@@ -56,7 +56,7 @@ const Membership = () => {
             </Link>
           </div>
           {!auth.user && (
-            <nav className=" list-none flex gap-6 justify-end items-center text-sm font-bold">
+            <nav className=" list-none flex gap-6 justify-end items-center text-sm font-bold text-white">
               <li className="hidden md:block">
                 <Link to="/ourstory">Our story</Link>
               </li>
@@ -109,7 +109,7 @@ const Membership = () => {
       </section>
 
       <section className="w-full lg:h-[55vh] text-white border-b-[1px] border-solid">
-        <div className="lg:w-[85%] lg:h-[90%] my-6 mx-auto flex lg:flex-row flex-col  justify-between">
+        <div className="lg:w-[90%] lg:h-[90%] my-6 mx-auto flex lg:flex-row flex-col  justify-between">
           <div className=" lg:border-r-[2px] lg:border-white flex-1 flex flex-col gap-6 lg:w-full w-[90%] mx-auto ">
             <h1 className="lg:text-5xl text-3xl leading-11 tracking-wide">
               Look nothing good comes for free ok? Pay up
@@ -128,7 +128,8 @@ const Membership = () => {
               of your money. cool right?
             </p>
           </div>
-          <div className="flex-1 lg:ml-6 flex flex-col gap-6 lg:w-full w-[90%] mx-auto my-5">
+          <div className="mb-8 md:hidden"></div>
+          <div className="flex-1 ml-8 flex flex-col gap-6 lg:w-[90%] w-[90%]  ">
             <h1 className="lg:text-5xl text-3xl leading-11 tracking-wide">
               Look nothing good comes for free ok? Pay up
             </h1>
@@ -153,7 +154,9 @@ const Membership = () => {
       <section className="testimonials w-full lg:h-[60vh] border-b-[1px] border-black border-solid bg-white">
         <div className="testimonials-content h-full bg-white flex flex-col gap-6  items-center lg:w-[80%] mx-auto">
           <div className="testimonials-content_heading my-10 lg:w-full w-[90%] mx-auto ">
-            <h1 className="text-4xl">Why folks give us their money ...</h1>
+            <h1 className="text-4xl md:text-center text-center">
+              Why folks give us their money ...
+            </h1>
           </div>
 
           <div className="">

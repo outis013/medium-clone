@@ -89,7 +89,7 @@ function Slide() {
             <h1 className="font-bold text-2xl">
               {testiominials[slideLength].name}
             </h1>
-            <div className="lg:w-full w-40 my-4 flex items-center justify-center gap-10 bg-blue-500 opacity-30 rounded-full">
+            <div className="lg:w-full w-40 my-4 flex items-center justify-center gap-10 bg-blue-500 opacity-50 rounded-full">
               <BsArrowLeft
                 onClick={slideLeft}
                 className="cursor-pointer text-4xl text-white font-extrabold"
