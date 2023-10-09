@@ -12,6 +12,10 @@ import postImage5 from "../assets/post5.jpg";
 import postImage6 from "../assets/post6.jpg";
 import postImage7 from "../assets/post7.jpg";
 
+import testiominials1 from "../assets/testimonials1.jpg";
+import testiominials2 from "../assets/testimonials2.jpg";
+import testiominials3 from "../assets/testimonials3.jpg";
+
 const brands = [
   { name: "Uber Eats", profileLogo: SiUbereats },
   { name: "Airbnb", profileLogo: SiAirbnb },
@@ -584,4 +588,25 @@ const posts = [
   },
 ];
 
-export { posts, mainPosts };
+const testiominials = [
+  {
+    name: "Hannibal Lecter",
+    testimony:
+      "Look I have to say that I gave my money to this folks out of being sorry. Did I feel good? yes. Did I get my moneys worth? maybe",
+    imgUrl: testiominials2,
+  },
+  {
+    name: "Dreymond Grey",
+    testimony:
+      "Look I have to say that I gave my money to this folks out of being sorry. Did I feel good? yes. Did I get my moneys worth? maybe",
+    imgUrl: testiominials1,
+  },
+  {
+    name: "Grace Floric",
+    testimony:
+      "Look I have to say that I gave my money to this folks out of being sorry. Did I feel good? yes. Did I get my moneys worth? maybe",
+    imgUrl: testiominials3,
+  },
+];
+
+export { posts, mainPosts, testiominials };
