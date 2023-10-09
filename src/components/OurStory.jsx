@@ -22,10 +22,10 @@ const OurStory = () => {
         {!auth.user && (
           <nav className=" list-none flex gap-6">
             <li className="border-[1px] border-white rounded-[25px] py-2 px-3 text-sm bg-gray-900 text-white">
-              <Link to="/">Sign up</Link>
+              <Link to="/singin">Sign up</Link>
             </li>
             <li className="border-[1px] border-white rounded-[25px] py-2 px-3 text-sm bg-white text-gray-900">
-              <Link to="/">Sign in</Link>
+              <Link to="/signin">Sign in</Link>
             </li>
             <li></li>
           </nav>

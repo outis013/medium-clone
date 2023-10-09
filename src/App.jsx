@@ -10,6 +10,8 @@ import Getstarted from "./components/Getstarted";
 import Hero from "./components/Hero";
 import PostDetails from "./components/PostDetails";
 import { authContext } from "./context/authContext";
+import Plans from "./components/Plans";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [auth, setAuth] = useState({
@@ -43,6 +45,7 @@ function App() {
             <Route path="signin" element={<Signin />} />
             <Route path="getstarted" element={<Getstarted />} />
             <Route path="posts/:id/postdetails" element={<PostDetails />} />
+            <Route path="/plans" element={<Plans />} />
           </Routes>
         </BrowserRouter>
       </authContext.Provider>
