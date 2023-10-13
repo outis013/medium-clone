@@ -609,4 +609,14 @@ const testiominials = [
   },
 ];
 
+export const faqs = [
+  {
+    title: "What are the new changes for the Partner Program?",
+    answer:
+      "We’ve updated the Partner Program to incentivize high-quality human writing. Here’s a quick summary: we’ve opened up the Partner Program to more locations, removed the 100 follower requirement, and require Medium membership to join. Earnings will be higher for stories that have repeat readers, have been Boosted, and that have a high read ratio. All stories will also earn more based on engagement signals like claps, highlights, and replies. Referral bonuses are being deprecated and new story stats will be added in so writers can better understand their story earnings breakdown.",
+    additionalLink:
+      "Read more about all of the changes and our vision for the Partner Program.",
+  },
+];
+
 export { posts, mainPosts, testiominials };
