@@ -5,8 +5,18 @@ import { PiStarFourBold, PiTrendUp } from "react-icons/pi";
 import { mainPosts, posts } from "../assets/data";
 import Post from "./Post";
 import Header from "./Header";
+import { useLockBodyScroll } from "@uidotdev/usehooks";
+
+import { FcGoogle } from "react-icons/fc";
+import { RxCross1 } from "react-icons/rx";
+import { AiOutlineApple } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import { BsTwitter } from "react-icons/bs";
 
 const Hero = () => {
+  const [modal, setModal] = useState(false);
+  const [onboardingMode, setonboardingMode] = useState("singin");
   const monthNames = [
     "January",
     "February",
@@ -62,7 +72,94 @@ const Hero = () => {
 
   return (
     <>
-      <Header />
+      <Header setModal={setModal} />
+      {modal && (
+        <div className="absolute w-[100vw] h-[100vh] top-0 left-0 z-3 bg-black opacity-90 flex justify-center items-center">
+          <div className="w-[40vw] h-[90vh] bg-white opacity-100 shadow-lg rounded-lg text-center pt-20 relative">
+            <RxCross1
+              onClick={() => setModal(false)}
+              className="absolute top-5 right-5 text-2xl text-black hover:rotate-180 transition-all duration-700 ease-linear cursor-pointer"
+            />
+            <h1 className="text-black text-2xl font-extrabold mb-20">
+              {onboardingMode === "signin" ? "Welcome back!" : "Join Medium"}
+            </h1>
+            <div className=" flex flex-col justify-center gap-3 items-center">
+              <Link className="border-[1px]  border-black rounded-full w-[250px] text-center  py-2 flex justify-around gap-4 items-center">
+                <p>
+                  <FcGoogle className="text-2xl" />
+                </p>
+                <p>Sign in with Google</p>
+              </Link>
+              <Link className="border-[1px]  border-black rounded-full w-[250px] text-center  py-2 flex justify-around gap-4 items-center">
+                <p>
+                  <FaFacebook className="text-2xl" />
+                </p>
+                <p>Sign in with Facebook</p>
+              </Link>
+              {onboardingMode === "signin" && (
+                <Link className="border-[1px]  border-black rounded-full w-[250px] text-center  py-2 flex justify-around gap-4 items-center">
+                  <p>
+                    <AiOutlineApple className="text-2xl" />
+                  </p>
+                  <p>Sign in with Apple</p>
+                </Link>
+              )}
+              {onboardingMode === "signin" && (
+                <Link className="border-[1px]  border-black rounded-full w-[250px] text-center  py-2 flex justify-around gap-4 items-center">
+                  <p>
+                    <BsTwitter className="text-2xl" />
+                  </p>
+                  <p>Sign in with Twitter</p>
+                </Link>
+              )}
+              <Link className="border-[1px]  border-black rounded-full w-[250px] text-center  py-2 flex justify-around gap-4 items-center">
+                <p>
+                  <HiOutlineMail className="text-2xl" />
+                </p>
+                <p>Sign in with Email</p>
+              </Link>
+            </div>
+            <div className="flex gap-1 items-center justify-center my-10 text-xs">
+              {onboardingMode === "signin" && (
+                <>
+                  <h1>No account?</h1>
+                  <Link
+                    onClick={() => setonboardingMode("signup")}
+                    className="text-green-500 text-sm "
+                  >
+                    Create one!
+                  </Link>
+                </>
+              )}
+              {onboardingMode !== "signin" && (
+                <>
+                  <h1>Already have an account?</h1>
+                  <Link
+                    onClick={() => setonboardingMode("signin")}
+                    className="text-green-500 text-sm "
+                  >
+                    Sign in
+                  </Link>
+                </>
+              )}
+            </div>
+            <div className="my-15 flex items-center justify-center gap-1  text-xs">
+              <p>forgot email or trouble signin in?</p>
+              <Link className="underline text-black ">Get help</Link>
+            </div>
+            <div className="px-[4rem] text-center my-12 text-xs">
+              <p>
+                Click “Sign {onboardingMode === "signup" ? "up" : "in"}” to
+                agree to Medium’s{" "}
+                <Link className="underline">Terms of Service</Link> and
+                acknowledge that Medium’s{" "}
+                <Link className="underline">Privacy Policy</Link> applies to
+                you.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="hero w-[100%]">
         <div className="hero-container w-[100%]">
           <div className="hero-welcome border-b-[1px] border-solid border-black bg-yellow-500 w-[100%] h-[55vh]">
@@ -75,8 +172,10 @@ const Hero = () => {
                   Discover stories, thinking and expertise from writers on any
                   topic
                 </p>
-                <p className="lg:mt-6 mt-8 px-12 text-white bg-black w-fit py-2 rounded-[25px] opacity-80 hover:opacity-100">
-                  <Link to="getstarted">Start reading</Link>
+                <p className="lg:mt-6 mt-8 z-1 px-12 text-white bg-black w-fit py-2 rounded-[25px] opacity-80 hover:opacity-100">
+                  <Link to="getstarted" className="z-1">
+                    Start reading
+                  </Link>
                 </p>
               </div>
               <div className="hero-welcome_image hidden md:block  flex-1">

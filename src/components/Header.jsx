@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import headerImage from "../assets/medium-logo.png";
 
-const Header = () => {
+const Header = ({ setModal }) => {
   //change navbar color on scroll
 
   const [navbarColor, setNavbarColor] = useState(false);
@@ -22,7 +22,7 @@ const Header = () => {
       className={
         navbarColor
           ? "header bg-white p-2 sticky top-0 bg-opacity-100 transition-all duration-200 ease-linear"
-          : "header bg-yellow-500 p-2 sticky top-0 transition-all duration-200 ease-linear "
+          : "header bg-yellow-500 p-2 sticky top-0 transition-all duration-200 ease-linear  "
       }
     >
       <div className="header-content w-full md:w-[75%] m-auto flex justify-between items-center">
@@ -44,11 +44,14 @@ const Header = () => {
             </li>
             <li className="nav-item text-sm hidden lg:block">
               {" "}
-              <Link to="write">Write</Link>{" "}
+              <Link to="write">Write</Link>
             </li>
-            <li className="nav-item text-sm hidden md:block">
+            <li
+              onClick={() => setModal((prev) => !prev)}
+              className="nav-item text-sm hidden md:block cursor-pointer"
+            >
               {" "}
-              <Link to="signin">Sign In</Link>{" "}
+              Sign In
             </li>
             <li
               className={
