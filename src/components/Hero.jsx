@@ -66,7 +66,7 @@ const Hero = () => {
       <div className="hero w-[100%]">
         <div className="hero-container w-[100%]">
           <div className="hero-welcome border-b-[1px] border-solid border-black bg-yellow-500 w-[100%] h-[55vh]">
-            <div className="hero-welcome_content w-full md:w-[87%] h-[100%] mx-4 md:ml-auto flex jusify-between">
+            <div className="hero-welcome_content w-full px-4 lg:px-0 md:w-[87%] md:ml-[11.5rem] h-[100%]  flex jusify-between">
               <div className="hero-welcome_text  flex-1 flex flex-col">
                 <h1 className="lg:text-[5rem] text-[3rem] mt-[3rem] lg:mt-[2rem]">
                   Stay Curious.
@@ -79,7 +79,7 @@ const Hero = () => {
                   <Link to="getstarted">Start reading</Link>
                 </p>
               </div>
-              <div className="hero-welcome_image hidden lg:block flex-1">
+              <div className="hero-welcome_image hidden md:block  flex-1">
                 <div className="landing w-[100%] h-[100%] ">
                   <div className="landing-content w-[80%] h-[95%] flex mt-2">
                     <img
