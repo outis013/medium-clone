@@ -22,7 +22,7 @@ const brands = [
   { name: "Facebook", profileLogo: SiFacebook },
 ];
 
-const users = [
+export const users = [
   {
     name: "Kaniel Outis",
     profileLogo: userProfile0,

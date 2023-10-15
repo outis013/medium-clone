@@ -12,10 +12,11 @@ import PostDetails from "./components/PostDetails";
 import { authContext } from "./context/authContext";
 import Plans from "./components/Plans";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Compose from "./components/Compose";
 
 function App() {
   const [auth, setAuth] = useState({
-    user: null,
+    user: true,
   });
 
   // const getPageUrl = () => {
@@ -46,6 +47,7 @@ function App() {
             <Route path="getstarted" element={<Getstarted />} />
             <Route path="posts/:id/postdetails" element={<PostDetails />} />
             <Route path="/plans" element={<Plans />} />
+            <Route path="/compose" element={<Compose />} />
           </Routes>
         </BrowserRouter>
       </authContext.Provider>

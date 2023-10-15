@@ -4,6 +4,16 @@ body {
   width: 100%;
   height: 100%;
   font-family: 'Poppins', serif;
+
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* .container {
