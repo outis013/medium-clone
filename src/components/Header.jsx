@@ -9,6 +9,7 @@ import { HiPencil } from "react-icons/hi";
 import { IoIosSearch } from "react-icons/io";
 import { GiMultiDirections } from "react-icons/gi";
 import { BsArrowUpRight } from "react-icons/bs";
+import { CgArrowRight } from "react-icons/cg";
 
 const Header = ({ setModal }) => {
   const { auth } = useContext(authContext);
@@ -94,8 +95,12 @@ const Header = ({ setModal }) => {
           </div>
         </div>
       ) : (
-        <div className={"w-full sticky top-0 left-0  bg-white z-10"}>
-          <div className="w-full relative">
+        <div className={"w-full sticky top-0 left-0   bg-white z-10"}>
+          <div className="cursor-pointer my-2 border-b-[1px] py-2 gap-2 bg-white w-full h-full md:hidden flex justify-center items-center">
+            <p>Open in app</p>
+            <CgArrowRight className=" rotate-[-45deg]" />
+          </div>
+          <div className="w-full relative py-2">
             {showExplore && (
               <Link
                 to="#"

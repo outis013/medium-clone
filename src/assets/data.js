@@ -619,4 +619,17 @@ export const faqs = [
   },
 ];
 
+export const writeOptions = [
+  "Add to publications",
+  "Share draft link",
+  "Share to Twitter",
+  "Manage unlisted setting",
+  "Change featured image",
+  "Change display title / subtitle",
+  "Change topics",
+  "see revision history",
+  "More settings",
+  "Hints keyboard shortcuts",
+];
+
 export { posts, mainPosts, testiominials };

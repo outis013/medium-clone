@@ -13,10 +13,11 @@ import { authContext } from "./context/authContext";
 import Plans from "./components/Plans";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Compose from "./components/Compose";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [auth, setAuth] = useState({
-    user: true,
+    user: { name: "Kaniel Outis", age: "27", sex: "male", id: uuidv4() },
   });
 
   // const getPageUrl = () => {

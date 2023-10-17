@@ -433,7 +433,7 @@ const Hero = () => {
                         key={index}
                         className="my-10 grid grid-cols-8 gap-1 align-middle w-full border-b-[1px] border-opacity-20"
                       >
-                        <div className=" col-span-5">
+                        <div className=" col-span-6 md:col-span-5">
                           <div className="flex items-center gap-2 font-thin text-gray-500">
                             <img
                               src={post.author.profileLogo}
@@ -448,7 +448,9 @@ const Hero = () => {
                             {post.isMembershipOnly && (
                               <p className="flex items-center gap-2">
                                 <PiStarThin className="text-yellow-500" />
-                                <h4>Members-only</h4>
+                                <h4 className="text-xs md:text-sm">
+                                  Members-only
+                                </h4>
                               </p>
                             )}
                           </div>
@@ -457,8 +459,10 @@ const Hero = () => {
                             <h2 className="my-2 font-bold text-lg">
                               {post.title}
                             </h2>
-                            <p>{post.content.substring(0, 200)}</p>
-                            <div className="flex items-center justify-between my-7">
+                            <p className="hidden md:block">
+                              {post.content.substring(0, 150)}
+                            </p>
+                            <div className="flex items-center justify-between my-10">
                               <div className="flex gap-3 items-center">
                                 <p className=" whitespace-normal bg-gray-300 px-2 py-1 rounded-full">
                                   {post.category}
@@ -473,11 +477,11 @@ const Hero = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="col-span-3 w-full h-full">
+                        <div className="col-span-2 md:col-span-3 w-full h-full">
                           <div className="w-full h-full flex items-center justify-center">
                             <img
                               src={post.imgUrl}
-                              className="w-[130px] h-[130px] object-cover rounded-lg"
+                              className="md:w-[130px] w-[90px] h-[90px] md:h-[130px] object-cover rounded-lg"
                               alt="post image"
                             />
                           </div>
