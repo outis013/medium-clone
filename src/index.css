@@ -7,13 +7,17 @@ body {
 
 }
 
-.no-scrollbar::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar, .textarea::-webkit-scrollbar {
   display: none;
 }
 
-.no-scrollbar {
+.no-scrollbar, .textarea {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.textarea {
+  resize: none;
 }
 
 /* .container {

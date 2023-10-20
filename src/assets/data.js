@@ -16,6 +16,11 @@ import testiominials1 from "../assets/testimonials1.jpg";
 import testiominials2 from "../assets/testimonials2.jpg";
 import testiominials3 from "../assets/testimonials3.jpg";
 
+import hint1 from "../assets/hint1.gif";
+import hint2 from "../assets/hint2.gif";
+import hint3 from "../assets/hint3.gif";
+import hint4 from "../assets/hint4.gif";
+
 const brands = [
   { name: "Uber Eats", profileLogo: SiUbereats },
   { name: "Airbnb", profileLogo: SiAirbnb },
@@ -630,6 +635,56 @@ export const writeOptions = [
   "see revision history",
   "More settings",
   "Hints keyboard shortcuts",
+];
+
+export const hints = [
+  { name: "hint1", url: hint1 },
+  { name: "hint2", url: hint2 },
+  { name: "hint3", url: hint3 },
+  { name: "hint4", url: hint4 },
+];
+
+export const notifications = [
+  {
+    user: { name: "David Berkowitz" },
+    message:
+      "You have a new message and I suggest you should hurry and open it right now...",
+  },
+  {
+    user: { name: "Babara Willar" },
+    message:
+      "There is something that is known as foot patrol and I can guarantee you it is not what you think it is ok?...",
+  },
+  {
+    user: { name: "David Berkowitz" },
+    message:
+      "You have a new message and I suggest you should hurry and open it right now...",
+  },
+  {
+    user: { name: "Babara Willar" },
+    message:
+      "There is something that is known as foot patrol and I can guarantee you it is not what you think it is ok?...",
+  },
+  {
+    user: { name: "David Berkowitz" },
+    message:
+      "You have a new message and I suggest you should hurry and open it right now...",
+  },
+  {
+    user: { name: "Babara Willar" },
+    message:
+      "There is something that is known as foot patrol and I can guarantee you it is not what you think it is ok?...",
+  },
+  {
+    user: { name: "David Berkowitz" },
+    message:
+      "You have a new message and I suggest you should hurry and open it right now...",
+  },
+  {
+    user: { name: "Babara Willar" },
+    message:
+      "There is something that is known as foot patrol and I can guarantee you it is not what you think it is ok?...",
+  },
 ];
 
 export { posts, mainPosts, testiominials };

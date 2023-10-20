@@ -14,11 +14,15 @@ import Plans from "./components/Plans";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Compose from "./components/Compose";
 import { v4 as uuidv4 } from "uuid";
+import { notifications } from "./assets/data";
 
 function App() {
   const [auth, setAuth] = useState({
     user: { name: "Kaniel Outis", age: "27", sex: "male", id: uuidv4() },
   });
+
+  const [showHints, setShowHints] = useState(true);
+  const [showNotifications, setshowNotifications] = useState(false);
 
   // const getPageUrl = () => {
   //   const currentUrl = window.location.href;
@@ -36,7 +40,17 @@ function App() {
 
   return (
     <>
-      <authContext.Provider value={{ auth, setAuth }}>
+      <authContext.Provider
+        value={{
+          auth,
+          setAuth,
+          showHints,
+          setShowHints,
+          notifications,
+          showNotifications,
+          setshowNotifications,
+        }}
+      >
         <BrowserRouter>
           {/* <Header /> */}
           <Routes>

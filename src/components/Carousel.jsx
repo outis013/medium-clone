@@ -10,11 +10,11 @@ function Slide() {
     if (slideLength < testiominials.length - 1) {
       slideLength += 1;
       setSlideLength(slideLength);
-      console.log(slideLength);
+
     } else if (slideLength === testiominials.length - 1) {
       slideLength = 0;
       setSlideLength(slideLength);
-      console.log(slideLength);
+
     }
   };
 

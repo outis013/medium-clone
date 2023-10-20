@@ -490,7 +490,7 @@ const Hero = () => {
                     ))}
                 </div>
               </div>
-              <div className=" hidden col-span-2 py-2 md:block sticky top-[90px] self-start text-left w-[90%]">
+              <div className=" hidden col-span-2 py-2 md:block  text-left w-[90%]">
                 <h1 className="py-3 font-bold text-lg">Staff Picks</h1>
                 <div className="pb-3 border-b-[1px] border-opacity-30 ">
                   {staffPicks.length > 0 &&
