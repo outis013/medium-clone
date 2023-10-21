@@ -23,6 +23,11 @@ function App() {
 
   const [showHints, setShowHints] = useState(true);
   const [showNotifications, setshowNotifications] = useState(false);
+  const [windowsWidth, setWindowsWidth] = useState(0);
+
+  window.addEventListener("resize", function () {
+    setWindowsWidth(window.innerWidth);
+  });
 
   // const getPageUrl = () => {
   //   const currentUrl = window.location.href;
@@ -49,6 +54,8 @@ function App() {
           notifications,
           showNotifications,
           setshowNotifications,
+          windowsWidth,
+          setWindowsWidth,
         }}
       >
         <BrowserRouter>

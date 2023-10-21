@@ -10,9 +10,10 @@ import { IoIosSearch } from "react-icons/io";
 import { GiMultiDirections } from "react-icons/gi";
 import { BsArrowUpRight } from "react-icons/bs";
 import { CgArrowRight } from "react-icons/cg";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Header = ({ setModal }) => {
-  const { auth } = useContext(authContext);
+  const { auth, windowsWidth } = useContext(authContext);
   //change navbar color on scroll
 
   const [navbarColor, setNavbarColor] = useState(false);
@@ -119,24 +120,34 @@ const Header = ({ setModal }) => {
                 <Link to="/" className="">
                   <img src={darkLogo} alt="Medium Logo" className="" />
                 </Link>
-                <div className="p-2 hidden md:block">
-                  <div className="flex items-center py-1 px-2 bg-black bg-opacity-10 rounded-full placeholder:text-[10px]">
-                    <IoIosSearch className="text-3xl" />
-                    <input
-                      onClick={showExploreButton}
-                      type="text"
-                      placeholder="Search Medium"
-                      className="outline-none border-none rounded-full p-1"
-                    />
+
+                {windowsWidth > 550 && (
+                  <div className="p-2 md:block">
+                    <div className="flex items-center py-1 px-2 bg-black bg-opacity-10 rounded-full placeholder:text-[10px]">
+                      <IoIosSearch className="text-3xl" />
+                      <input
+                        onClick={showExploreButton}
+                        type="text"
+                        placeholder="Search Medium"
+                        className="outline-none border-none rounded-full p-1"
+                      />
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
               <nav className="nav">
                 <ul className="flex items-center text-gray-600 gap-4 text-sm cursor-pointer">
-                  <Link to="/compose" className="flex items-center gap-2">
-                    <HiPencil className="text-2xl font-thin" />
-                    <p className="text-lg">Write</p>
-                  </Link>
+                  {windowsWidth >= 730 && (
+                    <Link to="/compose" className="flex items-center gap-2">
+                      <HiPencil className="text-2xl font-thin" />
+                      <p className="text-lg">Write</p>
+                    </Link>
+                  )}
+                  {windowsWidth <= 550 && (
+                    <li className=" cursor-pointer">
+                      <AiOutlineSearch className="text-xl" />
+                    </li>
+                  )}
                   <li className="cursor-point">
                     <FaBell className="text-xl" />
                   </li>

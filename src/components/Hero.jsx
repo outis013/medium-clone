@@ -395,8 +395,8 @@ const Hero = () => {
         <>
           <div className="w-full ">
             {showHeading && <Header />}
-            <div className="lg:w-[80%] md:grid grid-cols-7 gap-6 mx-auto">
-              <div className="col-span-5 py-2 px-4  top-[200px]  sticky border-r-[1px] border-opacity-10">
+            <div className="lg:w-[80%] md:w-[90%] md:grid grid-cols-10  gap-6 mx-auto">
+              <div className="col-span-6  py-2 px-4  top-[200px]  sticky border-r-[1px] border-opacity-10">
                 <div className="flex relative justify-between items-center gap-2 mt-8">
                   <LiaAngleLeftSolid
                     onClick={() => handleTopicsScroll("left")}
@@ -431,7 +431,7 @@ const Hero = () => {
                     mainPosts.map((post, index) => (
                       <div
                         key={index}
-                        className="my-10 grid grid-cols-8 gap-1 align-middle w-full border-b-[1px] border-opacity-20"
+                        className="my-10  grid-cols-8 gap-1 align-middle w-full border-b-[1px] border-opacity-20"
                       >
                         <div className=" col-span-6 md:col-span-5">
                           <div className="flex items-center gap-2 font-thin text-gray-500">
@@ -459,38 +459,42 @@ const Hero = () => {
                             <h2 className="my-2 font-bold text-lg">
                               {post.title}
                             </h2>
-                            <p className="hidden md:block">
-                              {post.content.substring(0, 150)}
-                            </p>
-                            <div className="flex items-center justify-between my-10">
-                              <div className="flex gap-3 items-center">
-                                <p className=" whitespace-normal bg-gray-300 px-2 py-1 rounded-full">
-                                  {post.category}
+                            <div className="flex justify-between items-center">
+                              <div>
+                                <p className=" md:block">
+                                  {post.content.substring(0, 150)}
                                 </p>
-                                <p>{post.readlength} min read</p>
                               </div>
-                              <div className="flex items-center gap-3 text-2xl">
-                                <BsSave className="cursor-pointer" />
-                                <GoBlocked className="cursor-pointer" />
-                                <CgMenuRight className="cursor-pointer" />
+                              <div className="col-span-2 md:col-span-3 w-full h-full">
+                                <div className="w-full h-full flex items-center justify-center">
+                                  <img
+                                    src={post.imgUrl}
+                                    className="md:w-[130px] w-[90px] h-[90px] md:h-[130px] object-cover rounded-lg"
+                                    alt="post image"
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-span-2 md:col-span-3 w-full h-full">
-                          <div className="w-full h-full flex items-center justify-center">
-                            <img
-                              src={post.imgUrl}
-                              className="md:w-[130px] w-[90px] h-[90px] md:h-[130px] object-cover rounded-lg"
-                              alt="post image"
-                            />
+                          <div className="flex items-center md:justify-start md:gap-20 justify-between my-10">
+                            <div className="flex gap-3 items-center">
+                              <p className=" whitespace-normal bg-gray-300 px-2 py-1 rounded-full">
+                                {post.category}
+                              </p>
+                              <p>{post.readlength} min read</p>
+                            </div>
+                            <div className="flex items-center gap-3 text-2xl">
+                              <BsSave className="cursor-pointer" />
+                              <GoBlocked className="cursor-pointer" />
+                              <CgMenuRight className="cursor-pointer" />
+                            </div>
                           </div>
                         </div>
                       </div>
                     ))}
                 </div>
               </div>
-              <div className=" hidden col-span-2 py-2 md:block  text-left w-[90%]">
+              <div className=" hidden col-span-4 py-2 md:block  text-left w-[90%]">
                 <h1 className="py-3 font-bold text-lg">Staff Picks</h1>
                 <div className="pb-3 border-b-[1px] border-opacity-30 ">
                   {staffPicks.length > 0 &&
@@ -521,14 +525,16 @@ const Hero = () => {
                       <BsTwitter className="text-5xl text-blue-500" />
                     </div>
 
-                    <p className="px-12 py-3 text-center font-extralight text-gray-500">
+                    <p className="px-6 py-3 text-center font-extralight text-gray-500">
                       Discover Medium writers you already follow on Twitter.
                     </p>
 
-                    <button className="text-center rounded-full flex items-center justify-start border-[1px] border-black gap-16 px-2 py-[.5rem] w-full">
+                    <h1 className="text-center rounded-full flex items-center justify-start border-[1px] border-black gap-16 px-2 py-[.5rem] w-72">
                       <BsTwitter className="text-blue-500 text-2xl " />
-                      <p className="text-lg">Connect to Twitter</p>
-                    </button>
+                      <p className="md:text-sm whitespace-nowrap">
+                        Connect to Twitter
+                      </p>
+                    </h1>
                   </div>
                   <div className="text-center py-3">
                     <Link className=" underline  text-gray-400 ">
@@ -612,7 +618,7 @@ const Hero = () => {
                                 className="w-8 h-8 rounded-full"
                                 alt="Post image"
                               />
-                              <h2 className="text-sm font-semibold">
+                              <h2 className="text-xs md:text-sm font-semibold">
                                 {post.author.name}
                               </h2>
                             </div>
