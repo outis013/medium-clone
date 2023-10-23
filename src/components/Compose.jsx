@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import MediumLogo from "../assets/medium-logo2.png";
 import { authContext } from "../context/authContext";
 import { IoMdOptions } from "react-icons/io";
@@ -59,8 +59,24 @@ const Compose = () => {
     }
   };
 
+  const optionsRef = useRef();
+  const notificationsRef = useRef();
+  const profileRef = useRef();
+
   useEffect(() => {
-    console.log(notifications);
+    document.addEventListener("mousedown", function (e) {
+      if (showOptions && !optionsRef.current.contains(e.target)) {
+        setShowOptions(false);
+        return;
+      } else if (
+        showNotifications &&
+        !notificationsRef?.current?.contains(e.target)
+      ) {
+        console.log(notificationsRef.current);
+        setshowNotifications(false);
+        return;
+      }
+    });
   });
 
   return (
@@ -87,7 +103,10 @@ const Compose = () => {
                 onClick={() => setShowOptions((prev) => !prev)}
               />
               {showOptions && (
-                <div className=" z-10 absolute top-[65px] rounded-lg right-24 px-4 py-2 border-[1px] border-gray-300">
+                <div
+                  ref={optionsRef}
+                  className=" z-10 absolute bg-white top-[65px] rounded-lg right-24 px-4 py-2 border-[1px] border-gray-300"
+                >
                   {writeOptions &&
                     writeOptions.map((option) => (
                       <p className="my-4">
@@ -103,8 +122,15 @@ const Compose = () => {
               )}
             </li>
             <li className="">
+              <BsBell
+                onClick={() => setshowNotifications((prev) => !prev)}
+                className=" cursor-pointer"
+              />
               {showNotifications && (
-                <div className=" extra shadow-sm shadow-black absolute top-[65px] w-80 rounded-lg right-[-60px] px-4 py-2 border-[1px] border-gray-300 z-10">
+                <div
+                  ref={notificationsRef}
+                  className=" extra shadow-sm  shadow-black absolute top-[80px] md:top-[65px] md:w-88 w-full rounded-lg right-0 md:right-[-60px] px-4 py-2 border-[1px] border-gray-300 z-10 bg-white"
+                >
                   {notifications &&
                     notifications.map((message, index) => {
                       if (index > 4) return;
@@ -119,9 +145,9 @@ const Compose = () => {
                               className="w-8 h-8 rounded-full"
                               alt=""
                             />
-                            <h2 className="w-full text-xs flex items-center gap-4 h-full hover:opacity-40 transition-all duration-300 ease-linear">
+                            <h2 className="w-full  text-xs flex items-center gap-2 h-full hover:opacity-40 transition-all duration-300 ease-linear">
                               <p>{message.user.name}</p>
-                              <p>Started following you</p>
+                              <p className="font-thin">Started following you</p>
                             </h2>
                           </div>
                           <div className="flex items-center gap-1 text-sm text-gary-300 font-thin">
@@ -147,10 +173,6 @@ const Compose = () => {
                   </div>
                 </div>
               )}
-              <BsBell
-                onClick={() => setshowNotifications((prev) => !prev)}
-                className=" cursor-pointer"
-              />
             </li>
             <li>
               <img
@@ -158,6 +180,8 @@ const Compose = () => {
                 src={MediumLogo}
                 alt="user image"
               />
+
+              <div ref={profileRef} className=""></div>
             </li>
           </nav>
         </header>

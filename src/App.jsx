@@ -15,6 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Compose from "./components/Compose";
 import { v4 as uuidv4 } from "uuid";
 import { notifications } from "./assets/data";
+import Notifications from "./components/Notifications";
 
 function App() {
   const [auth, setAuth] = useState({
@@ -70,6 +71,7 @@ function App() {
             <Route path="posts/:id/postdetails" element={<PostDetails />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="/compose" element={<Compose />} />
+            <Route path="/notifications" element={<Notifications />} />
           </Routes>
         </BrowserRouter>
       </authContext.Provider>

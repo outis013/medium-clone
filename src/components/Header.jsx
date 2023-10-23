@@ -149,7 +149,9 @@ const Header = ({ setModal }) => {
                     </li>
                   )}
                   <li className="cursor-point">
-                    <FaBell className="text-xl" />
+                    <Link to="/notifications">
+                      <FaBell className="text-xl" />
+                    </Link>
                   </li>
                   <li className="cursor-point">
                     <img
