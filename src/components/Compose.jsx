@@ -34,6 +34,8 @@ const Compose = () => {
     notifications,
     showNotifications,
     setshowNotifications,
+    profileOptions,
+    setProfileOptions,
   } = useContext(authContext);
   let [hintIndex, setHintIndex] = useState(0);
 
@@ -72,9 +74,10 @@ const Compose = () => {
         showNotifications &&
         !notificationsRef?.current?.contains(e.target)
       ) {
-        console.log(notificationsRef.current);
         setshowNotifications(false);
         return;
+      } else if (profileOptions && !profileRef.current.contains(e.target)) {
+        setProfileOptions(false);
       }
     });
   });
@@ -82,7 +85,7 @@ const Compose = () => {
   return (
     <>
       <div className="w-full md:px-4 mx-auto lg:w-[75%]">
-        <header className="w-full flex justify-between items-center py-4 relative px-10">
+        <header className="w-full flex justify-between items-center py-4 relative px-2 md:px-10">
           <div className="flex items-center gap-2">
             <h1>
               <Link to="/">
@@ -129,7 +132,7 @@ const Compose = () => {
               {showNotifications && (
                 <div
                   ref={notificationsRef}
-                  className=" extra shadow-sm  shadow-black absolute top-[80px] md:top-[65px] md:w-88 w-full rounded-lg right-0 md:right-[-60px] px-4 py-2 border-[1px] border-gray-300 z-10 bg-white"
+                  className=" extra shadow-sm  shadow-black absolute top-[80px] md:top-[65px] md:w-80 w-full rounded-lg right-0 md:right-[-60px] px-4 py-2 border-[1px] border-gray-300 z-10 bg-white"
                 >
                   {notifications &&
                     notifications.map((message, index) => {
@@ -176,10 +179,72 @@ const Compose = () => {
             </li>
             <li>
               <img
-                className="w-10 h-10 rounded-full border-[1px] p-1"
+                className="w-10 h-10 rounded-full border-[1px] p-1 cursor-pointer"
                 src={MediumLogo}
                 alt="user image"
+                onClick={() => setProfileOptions((prev) => !prev)}
               />
+
+              {profileOptions && (
+                <div
+                  ref={profileRef}
+                  className="shadow-sm  shadow-black absolute top-[80px] md:top-[70px] md:w-72 w-full rounded-lg right-0 md:right-[-60px]  py-2 border-[1px] border-gray-300 z-20 bg-white"
+                >
+                  <div className="w-full py-2 text-left">
+                    <div className="w-full  border-b-[1px] border-gray-400 pb-4">
+                      <div className="flex items-center gap-3 px-3">
+                        <img
+                          src={MediumLogo}
+                          className="w-14 h-14 rounded-full border-[1px] bordergray400 "
+                          alt=""
+                        />
+                        <div>
+                          <h2>{auth.user.name}</h2>
+                          <p className="text-gray-400">@{auth.user.nickname}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="w-full py-4  border-b-[1px] border-gray-400 ">
+                      <div className="px-3 ">
+                        <Link to="/compose" className="text-lg">
+                          Write
+                        </Link>
+                      </div>
+                    </div>
+
+                    <div className="w-full py-4  border-b-[1px] border-gray-400 ">
+                      <div className="px-3 flex flex-col gap-2 text-sm whitespace-nowrap ">
+                        <Link>Profile</Link>
+                        <Link>Library</Link>
+                        <Link>Stories</Link>
+                        <Link>Stats</Link>
+                      </div>
+                    </div>
+                    <div className="w-full py-4  border-b-[1px] border-gray-400 ">
+                      <div className="px-3  flex flex-col gap-2 text-sm whitespace-nowrap">
+                        <Link>Settings</Link>
+                        <Link>Refine recommendaton</Link>
+                        <Link>Stories</Link>
+                        <Link>Help</Link>
+                      </div>
+                    </div>
+                    <div className="w-full py-4  border-b-[1px] border-gray-400 ">
+                      <div className="px-3 flex flex-col gap-2  text-sm whitespace-nowrap">
+                        <Link>Apply to the Partnership Program</Link>
+                        <Link className="text-green-500 hover:text-black transition-all duration-300 ease-linear">
+                          Become a member
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="w-full py-4  border-b-[1px] border-gray-400 ">
+                      <div className="px-3  text-sm whitespace-nowrap">
+                        <Link>Sign out</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div ref={profileRef} className=""></div>
             </li>

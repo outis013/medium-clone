@@ -19,12 +19,19 @@ import Notifications from "./components/Notifications";
 
 function App() {
   const [auth, setAuth] = useState({
-    user: { name: "Kaniel Outis", age: "27", sex: "male", id: uuidv4() },
+    user: {
+      name: "Kaniel Outis",
+      age: "27",
+      sex: "male",
+      id: uuidv4(),
+      nickname: "mayhem101",
+    },
   });
 
   const [showHints, setShowHints] = useState(true);
   const [showNotifications, setshowNotifications] = useState(false);
   const [windowsWidth, setWindowsWidth] = useState(0);
+  const [profileOptions, setProfileOptions] = useState(false);
 
   window.addEventListener("resize", function () {
     setWindowsWidth(window.innerWidth);
@@ -57,6 +64,8 @@ function App() {
           setshowNotifications,
           windowsWidth,
           setWindowsWidth,
+          profileOptions,
+          setProfileOptions,
         }}
       >
         <BrowserRouter>
