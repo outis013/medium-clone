@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import OurStory from "./components/OurStory";
 import Membership from "./components/Membership";
+import ExtraTopics from "./components/ExtraTopics";
 import Write from "./components/Write";
 import Signin from "./components/Signin";
 import Getstarted from "./components/Getstarted";
@@ -81,6 +82,7 @@ function App() {
             <Route path="/plans" element={<Plans />} />
             <Route path="/compose" element={<Compose />} />
             <Route path="/notifications" element={<Notifications />} />
+            <Route path="/extra-topics" element={<ExtraTopics />} />
           </Routes>
         </BrowserRouter>
       </authContext.Provider>

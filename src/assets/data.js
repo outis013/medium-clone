@@ -21,6 +21,22 @@ import hint2 from "../assets/hint2.gif";
 import hint3 from "../assets/hint3.gif";
 import hint4 from "../assets/hint4.gif";
 
+async function getData() {
+  const data = await fetch("dummyjson.com/users");
+  const records = await data.json();
+
+  let tab = ``;
+
+  records.users.forEach(function (user) {
+    tab += `<tr>
+    <td>${user.firstName}</td>
+    <td>${user.gender}</td>
+    <td>${user.email}</td>
+
+    
+    `;
+  });
+}
 const brands = [
   { name: "Uber Eats", profileLogo: SiUbereats },
   { name: "Airbnb", profileLogo: SiAirbnb },

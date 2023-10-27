@@ -104,7 +104,7 @@ const Header = ({ setModal }) => {
           <div className="w-full relative py-2">
             {showExplore && (
               <Link
-                to="#"
+                to="/extra-topics"
                 className="flex items-center bg-white bg-opacity-100 opacity-100 z-2 shadow-black shadow-lg text-black rounded-lg w-[300px] justify-between px-4 py-3 absolute top-[57px] left-32"
               >
                 <div className="flex  items-start gap-2">

@@ -395,7 +395,7 @@ const Hero = () => {
         <>
           <div className="w-full ">
             {showHeading && <Header />}
-            <div className="lg:w-[80%] md:w-[90%] md:grid grid-cols-10  gap-6 mx-auto">
+            <div className="lg:w-[70%] md:w-full md:grid grid-cols-10  gap-6 mx-auto">
               <div className="col-span-6  py-2 px-4  top-[200px]  sticky border-r-[1px] border-opacity-10">
                 <div className="flex relative justify-between items-center gap-2 mt-8">
                   <LiaAngleLeftSolid
@@ -494,25 +494,30 @@ const Hero = () => {
                     ))}
                 </div>
               </div>
-              <div className=" hidden col-span-4 py-2 md:block  text-left w-[90%]">
-                <h1 className="py-3 font-bold text-lg">Staff Picks</h1>
+              <div className=" hidden col-span-4 py-2 md:block  text-left w-[70%]">
+                <h1 className="py-3 font-bold text-sm">Staff Picks</h1>
                 <div className="pb-3 border-b-[1px] border-opacity-30 ">
-                  {staffPicks.length > 0 &&
-                    staffPicks.map((post, index) => (
-                      <div className="my-5" key={index}>
-                        <Link to="/user" className="flex items-center gap-2">
-                          <img
-                            src={post?.author.profileLogo}
-                            alt="User"
-                            className="w-8 h-8 rounded-full"
-                          />
-                          <p>{post.author.name}</p>
-                        </Link>
-                        <div className="mt-1">
-                          <h2 className="font-extrabold">{post.title}</h2>
+                  {mainPosts &&
+                    mainPosts.map((post, index) => {
+                      if (index > 2) return;
+                      return (
+                        <div className="my-5" key={index}>
+                          <Link to="/user" className="flex items-center gap-2">
+                            <img
+                              src={post?.author.profileLogo}
+                              alt="User"
+                              className="w-8 h-8 rounded-full"
+                            />
+                            <p>{post.author.name}</p>
+                          </Link>
+                          <div className="mt-1">
+                            <h2 className="font-bold text-gray-600">
+                              {post.title}
+                            </h2>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
 
                   <p className="my-5 text-green-500 hover:text-black text-sm transition-all duration-0 ease-linear cursor-pointer">
                     See the full list
@@ -525,11 +530,11 @@ const Hero = () => {
                       <BsTwitter className="text-5xl text-blue-500" />
                     </div>
 
-                    <p className="px-6 py-3 text-center font-extralight text-gray-500">
+                    <p className="px-6 py-3 lg:px-10 text-center font-extralight text-gray-500">
                       Discover Medium writers you already follow on Twitter.
                     </p>
 
-                    <h1 className="text-center rounded-full flex items-center justify-start border-[1px] border-black gap-16 px-2 py-[.5rem] w-72">
+                    <h1 className="text-center rounded-full flex items-center justify- border-[1px] border-black gap-16 px-2 py-[.5rem] w-full ">
                       <BsTwitter className="text-blue-500 text-2xl " />
                       <p className="md:text-sm whitespace-nowrap">
                         Connect to Twitter
@@ -550,7 +555,7 @@ const Hero = () => {
                       if (index > 6) return;
                       return (
                         <p
-                          className=" whitespace-normal px-3 py-2 bg-gray-300 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer ease-in"
+                          className=" whitespace-normal px-3 py-2 text-sm text text-gray-800 bg-gray-100 rounded-full hover:scale-110 transition-all duration-300 cursor-pointer ease-in"
                           key={index}
                         >
                           {topic}
@@ -581,13 +586,15 @@ const Hero = () => {
                         </div>
                         <div className=" col-span-9 grid grid-cols-10 ml-2">
                           <div className=" col-span-7">
-                            <h2 className="mb-2  text-lg font-bold">
+                            <h2 className="mb-2  text-sm font-bold">
                               {user.name}
                             </h2>
-                            <p>{user.bio.substring(0, 50)}...</p>
+                            <p className="text-xs">
+                              {user.bio.substring(0, 50)}...
+                            </p>
                           </div>
                           <div className="col-span-3 flex items-center">
-                            <button className="rounded-full  border  border-black px-2 py-1 ">
+                            <button className="rounded-full  border  border-black px-2 py-1  text-xs">
                               Follow
                             </button>
                           </div>
@@ -623,10 +630,10 @@ const Hero = () => {
                               </h2>
                             </div>
 
-                            <div className="font-bold text-lg">
+                            <div className="font-bold text-sm">
                               <p>{post.title}</p>
                             </div>
-                            <div className="flex gap-1 items-center my-2 font-[50]">
+                            <div className="flex gap-1 items-center my-2 font-[50] text-xs">
                               <p>
                                 {monthNames[post.date.getMonth()].substring(
                                   0,
