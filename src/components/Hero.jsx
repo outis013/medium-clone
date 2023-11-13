@@ -396,7 +396,7 @@ const Hero = () => {
           <div className="w-full ">
             {showHeading && <Header />}
             <div className="lg:w-[80%] md:w-[90%] md:grid grid-cols-10  gap-6 mx-auto">
-              <div className="col-span-6  py-2 px-4  top-[200px]  sticky border-r-[1px] border-opacity-10">
+              <div className="lg:col-span-6 col-span-10  py-2 px-4  top-[200px]  sticky border-r-[1px] border-opacity-10">
                 <div className="flex relative justify-between items-center gap-2 mt-8">
                   <LiaAngleLeftSolid
                     onClick={() => handleTopicsScroll("left")}
@@ -494,7 +494,7 @@ const Hero = () => {
                     ))}
                 </div>
               </div>
-              <div className=" hidden col-span-4 py-2 md:block  text-left w-[90%]">
+              <div className=" hidden col-span-4 py-2 lg:block  text-left w-[90%]">
                 <h1 className="py-3 font-bold text-lg">Staff Picks</h1>
                 <div className="pb-3 border-b-[1px] border-opacity-30 ">
                   {staffPicks.length > 0 &&

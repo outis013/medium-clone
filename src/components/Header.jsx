@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import headerImage from "../assets/medium-logo.png";
 import darkLogo from "../assets/black-logo.png";
@@ -11,9 +11,11 @@ import { GiMultiDirections } from "react-icons/gi";
 import { BsArrowUpRight } from "react-icons/bs";
 import { CgArrowRight } from "react-icons/cg";
 import { AiOutlineSearch } from "react-icons/ai";
+import ProfileOptions from "./ProfileOptions";
 
 const Header = ({ setModal }) => {
-  const { auth, windowsWidth } = useContext(authContext);
+  const { auth, windowsWidth, showProfileOptions, setShowProfileOptions } =
+    useContext(authContext);
   //change navbar color on scroll
 
   const [navbarColor, setNavbarColor] = useState(false);
@@ -35,6 +37,22 @@ const Header = ({ setModal }) => {
 
   window.addEventListener("scroll", toggleNavbarColor);
 
+  //Ref for profile Options
+  const profileOptionsRef = useRef();
+  const profileButtonRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", function (e) {
+      if (
+        showProfileOptions &&
+        !profileOptionsRef.current.contains(e.target) &&
+        !profileButtonRef.current.contains(e.target)
+      ) {
+        setShowProfileOptions(false);
+        return;
+      }
+    });
+  });
   return (
     <>
       {!auth.user ? (
@@ -155,10 +173,21 @@ const Header = ({ setModal }) => {
                   </li>
                   <li className="cursor-point">
                     <img
+                      ref={profileButtonRef}
+                      onClick={() => setShowProfileOptions((pre) => !pre)}
                       src={darkLogo}
                       className="w-8 h-8 object-fill"
                       alt=""
                     />
+
+                    {showProfileOptions && (
+                      <div
+                        ref={profileOptionsRef}
+                        className="absolute top-12 lg:top-16 right-7 w-[260px] border-gray-300 border-[1px] rounded-sm"
+                      >
+                        <ProfileOptions />
+                      </div>
+                    )}
                   </li>
                 </ul>
               </nav>

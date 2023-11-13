@@ -102,8 +102,8 @@ const Notifications = () => {
     <>
       <Header />
       <section className="w-full ">
-        <div className="w-[75%] mx-auto grid grid-cols-10 gap-5">
-          <div className="col-span-7 my-10">
+        <div className="w-[75%] mx-auto flex grid-cols-10 gap-5">
+          <div className="col-span-7  w-full my-10">
             <h1 className="text-4xl font-[600]">Notifications</h1>
             <div className="  w-full ">
               <div className="w-full border-b-[1px]  border-gray-400 border-opacity-50 ">
@@ -138,7 +138,7 @@ const Notifications = () => {
                 </div>
               ) : (
                 <div className="w-full">
-                  <div className="w-full p-4">
+                  <div className="w-full">
                     {notifications &&
                       notifications.map((notification, index) => (
                         <div className="my-3">
@@ -184,7 +184,7 @@ const Notifications = () => {
               )}
             </div>
           </div>
-          <div className=" hidden col-span-3 py-2 md:block  text-left w-[90%]">
+          <div className=" hidden lg:block col-span-3 py-2   text-left w-[90%]">
             <h1 className="py-3 font-bold text-lg">Staff Picks</h1>
             <div className="pb-3 border-b-[1px] border-opacity-30 ">
               {staffPicks.length > 0 &&
